@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet, Button } from "react-native";
 
 export default function HomePage() {
   return (
     <>
-      <Text>Dashboard</Text>
-      <Text>Analysis</Text>
-      <Text>Expenses</Text>
-      <Text>Forecast</Text>
+      <Button>Dashboard</Button>
+      <Button>Analysis</Button>
+      <Button>Expenses</Button>
+      <Button>Forecast</Button>
     </>
   );
 }

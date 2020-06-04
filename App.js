@@ -1,19 +1,24 @@
 import * as React from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, Text, View } from "react-native";
 import { themes, ThemeContext } from "./theme/ThemeContext";
 
 import HomePage from "./components/HomePage";
 
-export default class App extends React.Component {
-  state = {
-    theme: themes.light
-  };
+const instructions = Platform.select({
+  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
+  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`
+});
 
-  toggleTheme = () => {
-    this.setState(state => ({
-      theme: state.theme === themes.dark ? themes.light : themes.dark
-    }));
-  };
+export default class App extends React.Component {
+  // state = {
+  //   theme: themes.light
+  // };
+
+  // toggleTheme = () => {
+  //   this.setState(state => ({
+  //     theme: state.theme === themes.dark ? themes.light : themes.dark
+  //   }));
+  // };
 
   render() {
     return (
