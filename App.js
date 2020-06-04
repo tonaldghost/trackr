@@ -10,15 +10,15 @@ const instructions = Platform.select({
 });
 
 export default class App extends React.Component {
-  // state = {
-  //   theme: themes.light
-  // };
+  state = {
+    theme: themes.dark
+  };
 
-  // toggleTheme = () => {
-  //   this.setState(state => ({
-  //     theme: state.theme === themes.dark ? themes.light : themes.dark
-  //   }));
-  // };
+  toggleTheme = () => {
+    this.setState(state => ({
+      theme: state.theme === themes.dark ? themes.light : themes.dark
+    }));
+  };
 
   render() {
     return (
