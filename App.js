@@ -4,7 +4,7 @@ import { MyProvider, MyContext } from "./theme/ThemeContext";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import ThemeButton from "./components/ThemeButton";
 
-import HomeNav from "./components/HomeNav";
+import HomeNav from "./screens/HomeNav";
 
 // decide on mvp functionality - that many components actually needed?
 // upgrade / do whatever needed to be able to use new react navigation

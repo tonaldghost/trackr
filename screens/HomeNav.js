@@ -1,10 +1,10 @@
 import React from "react";
 import { StyleSheet, Button } from "react-native";
 
-import AnalysisScreen from "../screens/AnalysisScreen";
-import DashboardScreen from "../screens/DashboardScreen";
-import ExpensesScreen from "../screens/ExpensesScreen";
-import ForecastScreen from "../screens/ForecastScreen";
+// import AnalysisScreen from "./AnalysisScreen";
+import DashboardScreen from "./DashboardScreen";
+// import ExpensesScreen from "./ExpensesScreen";
+// import ForecastScreen from "./ForecastScreen";
 
 export default function HomeNav() {
   return (
