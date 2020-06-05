@@ -9,7 +9,7 @@ export default class ThemeButton extends React.Component {
 
     return (
       <Button
-        onPress={this.props.toggleTheme}
+        onPress={props.toggleTheme}
         title="Change Theme"
         {...props}
         style={{ backgroundColor: theme.background }}
