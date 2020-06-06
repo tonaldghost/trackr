@@ -1,5 +1,9 @@
 import React from "react";
-import { StyleSheet, Button } from "react-native";
+import { StyleSheet } from "react-native";
+import { Button } from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome5";
+
+import { MyContext } from "../theme/ThemeContext";
 
 // import AnalysisScreen from "./AnalysisScreen";
 import DashboardScreen from "./DashboardScreen";
@@ -8,18 +12,44 @@ import DashboardScreen from "./DashboardScreen";
 
 export default function HomeNav() {
   return (
-    <>
-      <Button title="Dashboard" />
-      <Button title="Analysis" />
-      <Button title="Expenses" />
-      <Button title="Forecast" />
-    </>
+    <MyContext.Consumer>
+      {context => (
+        <>
+          <Button
+            style={{ ...context.state.button }}
+            title="DASHBOARD"
+            type="clear"
+          />
+          <Button
+            style={{ ...context.state.button }}
+            title="ANALYSIS"
+            type="clear"
+          />
+          <Button
+            style={{ ...context.state.button }}
+            title="EXPENSES"
+            type="clear"
+          />
+          <Button
+            style={{ ...context.state.button }}
+            title="FORECAST"
+            type="clear"
+          />
+        </>
+      )}
+    </MyContext.Consumer>
   );
-  styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: "center",
-      alignItems: "center"
-    }
-  });
 }
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    borderColor: "white",
+    borderWidth: 1,
+    color: "white",
+    fontSize: 24,
+    fontWeight: "bold",
+    padding: 4,
+    textAlign: "center",
+    width: 300
+  }
+});

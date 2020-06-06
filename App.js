@@ -1,22 +1,25 @@
 import * as React from "react";
-import { StyleSheet, View, Button, Text, ScrollView } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
+import { Button } from "react-native-elements";
 import { MyProvider, MyContext } from "./theme/ThemeContext";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import ThemeButton from "./components/ThemeButton";
 
 import HomeNav from "./screens/HomeNav";
 
 // decide on mvp functionality - that many components actually needed?
 // upgrade / do whatever needed to be able to use new react navigation
 
-// Add fade in and out of each shadow button (with icon) - switch between sun and moon.
+// Add fade in and out of each shadow button (with icon) - switch between sun and moon. (icons must switch color too)
 // Add navigation to each page.
 
 // style buttons and background better - also begin creating style themes so a user can
 // cycle through many quality themes.
 
-// need sqlite for on device storage? (can store current theme as well as data)
-// no need for anything more fanciful. decide on that.
+// MVP TO INCLUDE:
+// --> (Dark/Light/Hippie/Pink)
+// --> React navigation to switch screens
+// --> Async storage to store data for stackr and also theme chosen
+// --> Refactor to use hooks
 
 export default class App extends React.Component {
   state = {};
@@ -36,13 +39,12 @@ export default class App extends React.Component {
                 }}
               >
                 <HomeNav />
-                <Icon.Button
-                  name="suse"
-                  backgroundColor="#3b5998"
+                <Button
+                  style={{ ...context.state.button }}
+                  type="clear"
                   onPress={context.changeTheme}
-                >
-                  Theme Swapper
-                </Icon.Button>
+                  title="THEME SWAPPER"
+                />
               </ScrollView>
             </>
           )}
