@@ -1,6 +1,12 @@
 import * as React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
-import { Button } from "react-native-elements";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity
+} from "react-native";
+// import { Button } from "react-native-elements";
 import { MyProvider, MyContext } from "./theme/ThemeContext";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
@@ -39,12 +45,15 @@ export default class App extends React.Component {
                 }}
               >
                 <HomeNav />
-                <Button
-                  style={{ ...context.state.button }}
-                  type="clear"
+
+                <TouchableOpacity
+                  style={{ ...context.state.button, ...styles.themeSwapper }}
                   onPress={context.changeTheme}
-                  title="THEME SWAPPER"
-                />
+                >
+                  <Text style={{ ...context.state.text, fontSize: 16 }}>
+                    theme swapper
+                  </Text>
+                </TouchableOpacity>
               </ScrollView>
             </>
           )}
@@ -55,9 +64,12 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  themeButton: {
-    flex: 1,
+  themeSwapper: {
+    position: "absolute",
+    bottom: 24,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    width: 200,
+    height: 38
   }
 });

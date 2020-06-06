@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { Button } from "react-native-elements";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+// import { Button } from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 import { MyContext } from "../theme/ThemeContext";
@@ -15,41 +15,36 @@ export default function HomeNav() {
     <MyContext.Consumer>
       {context => (
         <>
-          <Button
-            style={{ ...context.state.button }}
-            title="DASHBOARD"
-            type="clear"
-          />
-          <Button
-            style={{ ...context.state.button }}
-            title="ANALYSIS"
-            type="clear"
-          />
-          <Button
-            style={{ ...context.state.button }}
-            title="EXPENSES"
-            type="clear"
-          />
-          <Button
-            style={{ ...context.state.button }}
-            title="FORECAST"
-            type="clear"
-          />
+          <TouchableOpacity style={{ ...context.state.button }}>
+            <Text style={{ ...context.state.text }}>DASHBOARD</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ ...context.state.button }}>
+            <Text style={{ ...context.state.text }}>ANALYSIS</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ ...context.state.button }}>
+            <Text style={{ ...context.state.text }}>EXPENSES</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{ ...context.state.button }}>
+            <Text style={{ ...context.state.text }}>FORECAST</Text>
+          </TouchableOpacity>
         </>
       )}
     </MyContext.Consumer>
   );
 }
 
-const styles = StyleSheet.create({
-  buttonStyle: {
-    borderColor: "white",
-    borderWidth: 1,
-    color: "white",
-    fontSize: 24,
-    fontWeight: "bold",
-    padding: 4,
-    textAlign: "center",
-    width: 300
-  }
-});
+// const styles = StyleSheet.create({
+//   buttonStyle: {
+//     borderColor: "white",
+//     borderWidth: 1,
+//     color: "white",
+//     fontSize: 24,
+//     fontWeight: "bold",
+//     padding: 4,
+//     textAlign: "center",
+//     width: 300
+//   }
+// });

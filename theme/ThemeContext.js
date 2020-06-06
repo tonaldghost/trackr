@@ -7,23 +7,19 @@ const windowWidth = Dimensions.get("window").width;
 export const themes = [
   {
     //light
-    backgroundColor: "#eeeeee",
-    color: "#000000"
+    backgroundColor: "#eeeeee"
   },
   {
     //dark
-    backgroundColor: "#222222",
-    color: "#ffffff"
+    backgroundColor: "#222222"
   },
   {
     //hippie
-    backgroundColor: "#F3B324",
-    color: "#6170A7"
+    backgroundColor: "#F3B324"
   },
   {
     //pink
-    backgroundColor: "#eeeeee",
-    color: "#ffc0cb"
+    backgroundColor: "#eeeeee"
   }
 ];
 
@@ -33,11 +29,7 @@ export const buttons = [
     borderColor: "black",
     borderWidth: 2,
     borderRadius: 8,
-    color: "black",
-    fontSize: 24,
-    fontWeight: "bold",
-    padding: 4,
-    textAlign: "center",
+    padding: 8,
     width: windowWidth * 0.8,
     marginBottom: 16
   },
@@ -46,11 +38,7 @@ export const buttons = [
     borderColor: "white",
     borderWidth: 2,
     borderRadius: 8,
-    color: "white",
-    fontSize: 24,
-    fontWeight: "bold",
-    padding: 4,
-    textAlign: "center",
+    padding: 8,
     width: windowWidth * 0.8,
     marginBottom: 16
   },
@@ -59,11 +47,7 @@ export const buttons = [
     borderColor: "#6170A7",
     borderWidth: 3,
     borderRadius: 8,
-    color: "#6170A7",
-    fontSize: 24,
-    fontWeight: "bold",
-    padding: 4,
-    textAlign: "center",
+    padding: 8,
     width: windowWidth * 0.8,
     marginBottom: 16
   },
@@ -72,13 +56,40 @@ export const buttons = [
     borderColor: "#FF8DA1",
     borderWidth: 3,
     borderRadius: 8,
-    color: "#000000",
-    fontSize: 24,
-    fontWeight: "bold",
-    padding: 4,
-    textAlign: "center",
+    padding: 8,
     width: windowWidth * 0.8,
     marginBottom: 16
+  }
+];
+
+export const texts = [
+  {
+    //light
+    color: "black",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  {
+    //dark
+    color: "white",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  {
+    //hippie
+    color: "#6170A7",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  {
+    //pink
+    color: "#FF8DA1",
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center"
   }
 ];
 
@@ -87,7 +98,8 @@ export const MyContext = React.createContext();
 export class MyProvider extends React.Component {
   state = {
     theme: themes[0],
-    button: buttons[0]
+    button: buttons[0],
+    text: texts[0]
   };
 
   render() {
@@ -100,31 +112,29 @@ export class MyProvider extends React.Component {
               case themes[0]:
                 return this.setState({
                   theme: themes[1],
-                  button: buttons[1]
+                  button: buttons[1],
+                  text: texts[1]
                 });
               case themes[1]:
                 return this.setState({
                   theme: themes[2],
-                  button: buttons[2]
+                  button: buttons[2],
+                  text: texts[2]
                 });
               case themes[2]:
                 return this.setState({
                   theme: themes[3],
-                  button: buttons[3]
+                  button: buttons[3],
+                  text: texts[3]
                 });
               case themes[3]:
                 return this.setState({
                   theme: themes[0],
-                  button: buttons[0]
+                  button: buttons[0],
+                  text: texts[0]
                 });
             }
           }
-          // this.setState({
-          // button:
-          //   this.state.button === buttons.dark
-          //     ? buttons.light
-          //     : buttons.dark
-          //     })
         }}
       >
         {this.props.children}
