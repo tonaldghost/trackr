@@ -1,5 +1,10 @@
 import React from "react";
+import { Text } from "react-native";
 
 export default function Dashboard() {
-  return <></>;
+  return (
+    <>
+      <Text>Dashboard</Text>
+    </>
+  );
 }

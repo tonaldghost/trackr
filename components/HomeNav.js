@@ -1,12 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
-// import { Button } from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import { Text, TouchableOpacity } from "react-native";
 
 import { MyContext } from "../theme/ThemeContext";
 
 // import AnalysisScreen from "./AnalysisScreen";
-import DashboardScreen from "./DashboardScreen";
+import DashboardScreen from "../screens/DashboardScreen";
 // import ExpensesScreen from "./ExpensesScreen";
 // import ForecastScreen from "./ForecastScreen";
 

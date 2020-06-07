@@ -1,16 +1,15 @@
+import "react-native-gesture-handler";
 import * as React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ScrollView,
-  TouchableOpacity
-} from "react-native";
-// import { Button } from "react-native-elements";
-import { MyProvider, MyContext } from "./theme/ThemeContext";
-import Icon from "react-native-vector-icons/FontAwesome5";
 
-import HomeNav from "./screens/HomeNav";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+import { StyleSheet, Text, ScrollView, TouchableOpacity } from "react-native";
+import { MyProvider, MyContext } from "./theme/ThemeContext";
+
+import HomeScreen from "./screens/HomeScreen";
+
+import Navigator from "./routes/homeStack";
 
 // decide on mvp functionality - that many components actually needed?
 // upgrade / do whatever needed to be able to use new react navigation
@@ -27,49 +26,20 @@ import HomeNav from "./screens/HomeNav";
 // --> Async storage to store data for stackr and also theme chosen
 // --> Refactor to use hooks
 
+//CHANGES
+// HOPMENAV IS COMPONENT FOR HOMESCREEN √
+// CREATE HOMESCREEN IN SCREENS √
+// ADD OTHER SCREENS IN THERE. √
+// APP.JS ONLY HOLDS NAVIGATION AND WRAPS PROVIDER? X
+
 export default class App extends React.Component {
   state = {};
 
   render() {
     return (
       <MyProvider>
-        <MyContext.Consumer>
-          {context => (
-            <>
-              <ScrollView
-                contentContainerStyle={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  ...context.state.theme
-                }}
-              >
-                <HomeNav />
-
-                <TouchableOpacity
-                  style={{ ...context.state.button, ...styles.themeSwapper }}
-                  onPress={context.changeTheme}
-                >
-                  <Text style={{ ...context.state.text, fontSize: 16 }}>
-                    theme swapper
-                  </Text>
-                </TouchableOpacity>
-              </ScrollView>
-            </>
-          )}
-        </MyContext.Consumer>
+        <HomeScreen />
       </MyProvider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  themeSwapper: {
-    position: "absolute",
-    bottom: 24,
-    justifyContent: "center",
-    alignItems: "center",
-    width: 200,
-    height: 38
-  }
-});
